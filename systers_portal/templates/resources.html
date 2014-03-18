@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Systers - Add resource</title>
+{% endblock %}
+
+{% block body %}
+{% for resource in resources %}
+<div>
+  <h2>{{ resource.title }}</h2>
+  <h5>By {{ resource.author }}, written on {{resource.date }}</h5>
+  <h5>Location: {{ resource.location }}</h5>
+  {{ resource.content|safe }}
+</div>
+{% endfor %}
+{% endblock %}

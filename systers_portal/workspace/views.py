@@ -21,3 +21,7 @@ def add_resource(request):
         resource.save()
         return redirect(index)
     return render(request, 'add_resource.html', {'form': form})
+
+def view_resources(request):
+    resources = Resource.objects.all()
+    return render(request, 'resources.html', {'resources': resources})
