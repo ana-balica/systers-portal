@@ -5,4 +5,4 @@ from workspace.models import Resource
 class ResourceForm(ModelForm):
     class Meta:
         model = Resource
-        exclude = ['date']
+        exclude = ['date', 'author']
