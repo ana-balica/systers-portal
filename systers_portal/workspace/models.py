@@ -26,3 +26,6 @@ class Resource(models.Model):
     status = models.CharField(max_length=31, choices=RESOURCE_STATUS)
     location = CountryField()
     content = models.TextField()
+
+    def __unicode__(self):
+        return "{0} by {1}".format(self.title, self.author.auth_user.username)
