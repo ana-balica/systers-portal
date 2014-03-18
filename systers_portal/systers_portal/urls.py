@@ -8,8 +8,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', index, name="index"),
-    url(r'^index$', index, name="index"),
-    url(r'^add_resource$', add_resource, name="add_resource"),
+    url(r'^index/', index, name="index"),
+    url(r'^resources/add/', add_resource, name="add_resource"),
     url(r'^login/', login_view, name="login"),
     url(r'^logout/', logout_view, name="logout"),
     url(r'^grappelli/', include('grappelli.urls')),
