@@ -2,12 +2,14 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
 from workspace.views import index
+from dashboard.views import log_in
 
 admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', index, name="index"),
     url(r'^index$', index, name="index"),
+    url(r'^login/', log_in, name="login"),
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
