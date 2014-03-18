@@ -1,4 +1,4 @@
 from django.contrib import admin
-from models import Resourse
+from workspace.models import Resource
 
-admin.site.register(Resourse)
+admin.site.register(Resource)

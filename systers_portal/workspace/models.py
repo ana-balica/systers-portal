@@ -1,5 +1,6 @@
 from django.db import models
 from dashboard.models import User
+from django_countries.fields import CountryField
 
 RESOURCE_TYPES = (
     ('scholarship', 'Scholarship'),
@@ -10,8 +11,16 @@ RESOURCE_TYPES = (
     ('meetup', 'Meetup')
 )
 
-class Resourse(models.Model):
+RESOURCE_STATUS = {
+    ('upcoming', 'Upcoming'),
+    ('past', 'Past')
+}
+
+class Resource(models.Model):
     type = models.CharField(max_length=255, choices=RESOURCE_TYPES)
     author = models.ForeignKey(User, null=False)
+    date = models.DateField()
     title = models.CharField(max_length=511, blank=False, null=False)
+    status = models.CharField(max_length=31, choices=RESOURCE_STATUS)
+    location = CountryField()
     content = models.TextField()
