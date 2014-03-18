@@ -21,9 +21,9 @@
     <div class="container">
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li><a href="">Home</a></li>
-          <li><a href="">Resources</a></li>
-          <li><a href="">Add resource</a></li>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'view_resources' %}">Resources</a></li>
+          <li><a href="{% url 'add_resource' %}">Add resource</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           {% if user.is_authenticated  %}
