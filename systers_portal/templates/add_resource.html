@@ -1,15 +1,18 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block title %}
 <title>Systers - Add resource</title>
 {% endblock %}
 
 {% block content %}
+    <div class="">
 <form role="form" action="/resources/add/" method="POST">
   {% csrf_token %}
-  {{ form }}
+  {{ form|crispy }}
   <button type="submit">Create</button>
 </form>
+      </div>
 {% if error %}
   <p>{{ error }}</p>
 {% endif %}

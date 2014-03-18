@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'dashboard',
     'workspace',
+    'crispy_forms',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -67,6 +68,8 @@ WSGI_APPLICATION = 'systers_portal.wsgi.application'
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
 )
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 
 # Database
