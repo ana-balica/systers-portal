@@ -64,6 +64,10 @@ ROOT_URLCONF = 'systers_portal.urls'
 
 WSGI_APPLICATION = 'systers_portal.wsgi.application'
 
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
+)
+
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
