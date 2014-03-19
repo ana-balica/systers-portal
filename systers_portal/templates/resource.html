@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Systers - {{ resource.title }}</title>
+{% endblock %}
+
+{% block content %}
+<div>
+  <h2>{{ resource.title }}</h2>
+  <h5>By {{ resource.author }}, written on {{resource.date }}</h5>
+  <h5>Location: {{ resource.location }}</h5>
+  <div>{{ resource.content|safe }}</div>
+  <div class="fb-share-button" data-href="{% url 'view_resource' resource.id %}"
+       data-type="button"></div>
+</div>
+{% endblock %}

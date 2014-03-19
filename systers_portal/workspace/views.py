@@ -31,3 +31,8 @@ def view_resources(request):
     resources = Resource.objects.all()
     return render(request, 'resources.html', {'resources': resources})
 
+
+def view_resource(request, id):
+    resource = Resource.objects.get(id=id)
+    return render(request, "resource.html", {"resource": resource})
+

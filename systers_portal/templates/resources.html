@@ -7,7 +7,7 @@
 {% block content %}
 {% for resource in resources %}
 <div>
-  <h2>{{ resource.title }}</h2>
+  <h2><a href="{% url 'view_resource' resource.id %}">{{ resource.title }}</a></h2>
   <h5>By {{ resource.author }}, written on {{resource.date }}</h5>
   <h5>Location: {{ resource.location }}</h5>
   {{ resource.content|safe }}
